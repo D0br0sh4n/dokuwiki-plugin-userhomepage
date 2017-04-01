@@ -30,7 +30,7 @@ class action_plugin_userhomepage extends DokuWiki_Action_Plugin{
             $this->helper = plugin_load('helper','userhomepage');
             // If templates_path option starts with 'data/pages' it can automatically be adapted but should be changed
             if (substr($this->getConf('templates_path'),0,10) == 'data/pages') {
-                $dest = str_replace("data/pages", "./pages", $this->getConf('templates_path'));
+                $dest = str_replace("data/pages", "pages", $this->getConf('templates_path'));
                 msg("Userhomepage option [<code>templates_path</code>] should be changed to a path relative to data folder (as set by Dokuwiki's [<code>savedir</code>] setting). Current value is based on former default (i.e. <code>data/pages/...</code>) and will still work but this message will keep appearing until the value is corrected, check <a href='https://www.dokuwiki.org/plugin:userhomepage'>this page</a> for details.",2);
             } else {
                 $dest = $this->getConf('templates_path');
